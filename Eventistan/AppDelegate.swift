@@ -10,20 +10,19 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var appFlowController: AppFlowController?
+    lazy var navigationController = UINavigationController()
+    lazy var appFlowController = AppFlowController(
+        navigationController: navigationController)
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
 
-        let navController = UINavigationController()
-        appFlowController = AppFlowController(navigationController: navController)
-        appFlowController?.start()
-
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navController
+        navigationController.setNavigationBarHidden(true, animated: false)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        appFlowController.startFlow()
 
         return true
     }

@@ -14,12 +14,25 @@ final class AppFlowController {
         self.navigationController = navigationController
     }
 
-    func start() {
-        showHome()
+    func startFlow() {
+        startLaunchScreen()
     }
+}
 
-    private func showHome() {
-        let homeVC = LoginBuilder.build()
-        navigationController.setViewControllers([homeVC], animated: false)
+extension AppFlowController {
+    func startLaunchScreen() {
+        let viewController = SplashBuilder.build(dependency: dependency) { [weak self] action in
+            switch action {
+            case .animationCompleted:
+                self?.startDashboard()
+            }
+        }
+        
+        rootNavigationController?.setViewControllers([viewController], animated: false)
+    }
+    
+    func startDashboard() {
+        let flowController = DashboardFlowController(rootNavigationController: rootNavigationController)
+        navigate(to: flowController)
     }
 }

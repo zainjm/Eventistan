@@ -9,28 +9,20 @@ import UIKit
 
 public extension UIColor {
     
-    static let dark = "dark".color
-    static let grey = "grey".color
-    static let light = "light".color
-    static let teal = "teal".color
-    static let whatsapp = "whatsapp".color
     
     // MARK: - Primary Colors
-    static let primaryYellow = "primaryYellow".color
-    static let primaryWhite = "primaryWhite".color
-    static let primaryTeal = "primaryTeal".color
-    static let primaryRed = "primaryRed".color
-    static let primaryBlack = "primaryBlack".color
-    static let primaryGrey = "primaryGrey".color
-    static let primaryBlue = "primaryBlue".color
-    static let primaryShadow = "primaryShadow".color
-    static let background = "background".color
-    static let overlay = "overlay".color
+    static let secondary = "secondary".color
+    static let overlayBlur2 = "overlayBlur2".color
+    static let overlayBlurCTA = "overlayBlurCTA".color
+    static let primary = "primary".color
+    static let overlay = "overlayBlur".color
     
-    // MARK: - Secondary Colors
-    /// To be used if white shadow needed for dark mode as well
-    static let secondaryShadow = "secondaryShadow".color
-
+    // MARK: - Label Shades
+    
+    static let primaryLabel = "primaryLabel".color
+    static let primaryWhite = "primaryWhite".color
+    static let tertiaryLabel = "tertiaryLabel".color
+    static let secondaryLabel = "secondaryLabel".color
     
     // MARK: - Yellow Shades
     static let yellow100 = "yellow100".color
