@@ -17,6 +17,9 @@ final class GettingStartedViewController: UIViewController {
     
     // MARK: - IBActions
     
+    @IBAction func buttonTapped(_ sender: Any) {
+        viewModel.onTap()
+    }
     
     // MARK: - Properties
     

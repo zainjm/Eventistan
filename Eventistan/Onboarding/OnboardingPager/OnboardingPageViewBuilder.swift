@@ -16,7 +16,7 @@ struct InfoType {
 }
 
 class OnboardingPageViewBuilder {
-    class func build() -> OnboardingPageViewController {
+    class func build(navigateToLogin: (() -> Void)?) -> OnboardingPageViewController {
         let vc = OnboardingPageViewController.instantiateViewController(from: .main)
 
         let info = InfoType(
@@ -27,10 +27,18 @@ class OnboardingPageViewBuilder {
             secondPageTitle: "Hassle-Free Setup, Smooth Delivery",
             secondPageSubtitle: "Easily plan your event with a streamlined process, ensuring smooth execution and memorable results."
         )
-
-        let firstPage = GettingStartedBuilder.build(infoType: info, isFirstPage: true)
-        let secondPage = GettingStartedBuilder.build(infoType: info, isFirstPage: false)
-
+        weak var weakVC = vc
+        let firstPage = GettingStartedBuilder.build(infoType: info, isFirstPage: true, onTapCallback: {
+            guard let vc = weakVC else { return }
+            if vc.pages.count > 1 {
+                vc.setViewControllers([vc.pages[1]], direction: .forward, animated: true)
+            }
+        })
+        
+        let secondPage = GettingStartedBuilder.build(infoType: info, isFirstPage: false, onTapCallback: {
+            navigateToLogin?()
+        })
+        
         let pages = [firstPage, secondPage]
         vc.pages = pages
         if let firstVC = pages.first {

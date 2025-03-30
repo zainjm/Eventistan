@@ -11,12 +11,15 @@ protocol GettingStartedViewModelType {
     var imageName: String { get }
     var headline1: String { get }
     var headline2: String { get }
+    func onTap()
 }
 
 final class GettingStartedViewModel: GettingStartedViewModelType {
     let imageName: String
     let headline1: String
     let headline2: String
+    
+    var tapCallback: (() -> Void)?
     
     init(_ info: InfoType, isFirstPage: Bool) {
         if isFirstPage {
@@ -28,5 +31,9 @@ final class GettingStartedViewModel: GettingStartedViewModelType {
             self.headline1 = info.secondPageTitle
             self.headline2 = info.secondPageSubtitle
         }
+    }
+    
+    func onTap() {
+        tapCallback?()
     }
 }

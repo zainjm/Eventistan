@@ -63,6 +63,9 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uZ-bt-C2b" customClass="PrimaryButton" customModule="Eventistan" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="241.33333333333334"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <connections>
+                                                                            <action selector="buttonTapped:" destination="Y6W-OH-hqX" eventType="valueChanged" id="e5X-Fk-9wD"/>
+                                                                        </connections>
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>
