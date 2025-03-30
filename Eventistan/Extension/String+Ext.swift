@@ -26,10 +26,6 @@ public extension String {
     func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
 	}
-
-    func formatted(with currency: CurrencyType = .pkr) -> String {
-        String(format: currency.amountFormat, self)
-    }
     
     func isValidCharCount(_ count: Int) -> Bool {
         self.count >= count
@@ -44,24 +40,6 @@ public extension String {
         return ceil(boundingBox.height)
     }
     
-    func formattedDate(from inputFormat: DateFormat, to outputFormat: DateFormat, locale: Locale = .current, timeZone: TimeZone = .current) -> String? {
-        
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = inputFormat.value
-        inputFormatter.locale = Locale(identifier: "en_US_POSIX")
-        inputFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        
-        guard let date = inputFormatter.date(from: self) else {
-            return nil
-        }
-        
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = outputFormat.value
-        outputFormatter.locale = locale
-        outputFormatter.timeZone = timeZone
-        
-        return outputFormatter.string(from: date)
-    }
     
     var underLined: NSAttributedString {
         NSMutableAttributedString(string: self, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
@@ -175,66 +153,4 @@ public extension String {
 }
 
 
-public extension String {
-    var phoneWithOutCode: String {
-        guard
-              let phoneWithOutCode: String? = String(self.dropFirst(3)),
-              let phoneWithOutCode else {return .empty}
-        return phoneWithOutCode
-    }
-    
-    var getPackageExpireTime : String{
-//        let dateFormatter = ISO8601DateFormatter = "yyyy-MM-dd'T'HH:mm:ssXXXXX"()
-//        dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateFormat.ISO8601DateFormatter.rawValue
-        // Parse the date string
-        if let targetDate = dateFormatter.date(from: self) {
-            // Current date
-            let currentDate = Date()
-            
-            // Calculate the difference in seconds
-            let timeInterval = targetDate.timeIntervalSince(currentDate)
-            
-            // Convert to days, weeks, and months (approximation)
-            let days = Int(timeInterval / (24 * 60 * 60))
-            let weeks = Int(ceil(Double(days) / 7.0))
-            let months = Int(ceil(Double(days) / 30.0))
-            
-            // Print results
-            print("Days: \(days)")
-            print("Weeks: \(weeks)")
-            print("Months: \(months)")
-            if months > 0 {
-                return "\(months) month\(months.pluralItem)"
-            } else if weeks > 0 {
-                return "\(weeks) week\(weeks.pluralItem)"
-            } else {
-                return "\(days) day\(days.pluralItem)"
-            }
 
-        } else {
-            return .empty
-        }
-        
-    }
-    
-    
-    var getPackageExpireString : String {
-        
-        
-        let isoFormatter = ISO8601DateFormatter()
-        isoFormatter.formatOptions = [.withInternetDateTime]
-
-        guard let date = isoFormatter.date(from: self) else {
-            return .empty
-        }
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        dateFormatter.locale = Locale(identifier: "en_US")
-
-        return "Valid till \(dateFormatter.string(from: date))"
-    }
-
-}

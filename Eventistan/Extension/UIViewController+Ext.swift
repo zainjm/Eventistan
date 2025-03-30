@@ -108,19 +108,6 @@ public extension UIViewController {
         (presentedViewController ??     self).present(alertController, animated: true)
     }
     
-    func setTopViews(stackView: UIStackView, imageView: UIImageView, icon: String, label: UILabel, title: String, isSelected: Bool = false) {
-        stackView.backgroundColor = isSelected ? .grey6 : .background
-        stackView.cornerRadius = .small
-        stackView.borderColor = isSelected ? .clear : .grey2
-        stackView.border = .light
-        if isSelected {
-            stackView.applyDropShadow(shadowRadius: 4, shadowOpacity: 0.05)
-        }
-        imageView.image = UIImage(named: icon)
-        label.font = .paragraph8
-        label.textColor = isSelected ? .background : .grey6
-        label.text = title
-    }
     
     func setInteractivePopEnabled( _ enabled: Bool) {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = enabled
