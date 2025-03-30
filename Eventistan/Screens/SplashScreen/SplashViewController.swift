@@ -29,21 +29,7 @@ private extension SplashViewController {
         eventraLogo.image = UIImage(named: Constants.eventistanBackgroundLogo)
         eventistanTitle.text = Constants.eventistanTitle
         eventistanTitle.textColor = .primaryWhite
-        eventistanTitle.font = .headline5
-        let testFont = UIFont(name: "DMSans-Bold", size: 16)
-        print("Loaded DM Sans Bold:", testFont ?? "FAILED TO LOAD")
-        print(UIFont.fontNames(forFamilyName: "DM Sans"))
-        for family in UIFont.familyNames {
-            print("Family: \(family)")
-            for font in UIFont.fontNames(forFamilyName: family) {
-                print("  \(font)")
-            }
-        }
-        if let boldFont = UIFont(name: "DMSans-9ptRegular_Bold", size: 16) {
-            print("Loaded DM Sans Bold: \(boldFont)")
-        } else {
-            print("Failed to load DM Sans Bold")
-        }
+        eventistanTitle.font = .headline1
     }
 }
 
@@ -51,6 +37,9 @@ private extension SplashViewController {
 // MARK: - Binding
 private extension SplashViewController {
     func bindViews() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.viewModel.onSplashAnimationCompleted()
+        }
     }
 }
 

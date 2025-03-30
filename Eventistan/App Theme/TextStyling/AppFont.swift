@@ -33,20 +33,7 @@ public enum AppFont {
 
 extension AppFont.Custom {
     func name(for textWeight: TextWeight) -> String {
-        let finalWeight = supportedWeight(for: textWeight)
-        switch finalWeight {
-        case .light:
-            return "DMSans-9ptRegular_Light"
-        case .regular:
-            return "DMSans-9ptRegular"
-        case .medium:
-            return "DMSans-9ptRegular_Medium"
-        case .semibold:
-            return "DMSans-9ptRegular_SemiBold"
-        case .bold:
-            return "DMSans-9ptRegular_Bold"
-        default:
-            return "DMSans-9ptRegular"
-        }
+        guard textWeight != .regular else { return rawValue }
+        return rawValue + "-" + supportedWeight(for: textWeight).rawValue
     }
 }

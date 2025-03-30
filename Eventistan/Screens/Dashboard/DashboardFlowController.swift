@@ -20,14 +20,19 @@ final class DashboardFlowController: FlowController {
     
     // MARK: - Flow
     override func startFlow() {
-        let viewController = DashboardBuilder.build()
+        let viewController = SplashBuilder.build(actionHandler: { [weak self] action in
+            switch action {
+            case .animationCompleted:
+                self?.startOnboarding()
+            }
+        })
         rootNavigationController?.setViewControllers(with: .fade, [viewController])
-        startHome()
     }
 }
 
 extension DashboardFlowController {
-    func startHome() {
-        
+    func startOnboarding() {
+        let viewController = OnboardingPageViewBuilder.build()
+        rootNavigationController?.pushViewController(viewController, animated: true)
     }
 }
