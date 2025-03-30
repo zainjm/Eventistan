@@ -105,7 +105,7 @@ public extension UIViewController {
             alertController.addAction(alertAction)
         }
         
-        (presentedViewController ?? self).present(alertController, animated: true)
+        (presentedViewController ??     self).present(alertController, animated: true)
     }
     
     func setTopViews(stackView: UIStackView, imageView: UIImageView, icon: String, label: UILabel, title: String, isSelected: Bool = false) {
