@@ -7,21 +7,17 @@
 
 import UIKit
 
-final class AppFlowController {
-    private let navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func startFlow() {
-        startLaunchScreen()
+final class AppFlowController: FlowController {
+    // MARK: - Flow
+    override func startFlow() {
+        startSplash()
     }
 }
 
-extension AppFlowController {
-    func startLaunchScreen() {
-        let viewController = SplashBuilder.build(dependency: dependency) { [weak self] action in
+// MARK: - Flow
+private extension AppFlowController {
+    func startSplash() {
+        let viewController = SplashBuilder.build() { [weak self] action in
             switch action {
             case .animationCompleted:
                 self?.startDashboard()

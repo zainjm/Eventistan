@@ -11,7 +11,7 @@ protocol FlowControllerDelegate: AnyObject {
     func flowControllerDidFinish(_ flowController: FlowControllerType)
 }
 
-open class FlowController: NSObject {
+open class FlowController: NSObject, FlowControllerType {
     // MARK: - Properties
     public var rootNavigationController: UINavigationController?
     private(set) public var flowControllers = [FlowController]()

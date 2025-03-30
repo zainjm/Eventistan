@@ -9,21 +9,19 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    lazy var window: UIWindow? = UIWindow()
     lazy var navigationController = UINavigationController()
     lazy var appFlowController = AppFlowController(
-        navigationController: navigationController)
+        rootNavigationController: navigationController)
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-
         navigationController.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         appFlowController.startFlow()
-
         return true
     }
 }

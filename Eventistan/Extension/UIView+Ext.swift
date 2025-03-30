@@ -134,7 +134,7 @@ private class HighlightableButton: UIButton {
     }
     
     // MARK: - Properties
-    var hightlightColor: UIColor = .background
+    var hightlightColor: UIColor = .primary
     
     public override var isHighlighted: Bool {
         didSet { backgroundColor = hightlightColor.withAlphaComponent(isHighlighted ? Constant.hightlightedAlpha : Constant.unhightlightedAlpha) }

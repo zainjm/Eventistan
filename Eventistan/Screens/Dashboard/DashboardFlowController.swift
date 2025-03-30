@@ -22,7 +22,6 @@ final class DashboardFlowController: FlowController {
     override func startFlow() {
         let viewController = DashboardBuilder.build()
         rootNavigationController?.setViewControllers(with: .fade, [viewController])
-        
         startHome()
     }
 }

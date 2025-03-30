@@ -7,8 +7,6 @@
 
 
 protocol SplashViewModelType {
-    var startAnimationInLoopCallback: (() -> Void)? { get set }
-    
     func onSplashAnimationCompleted()
 }
 

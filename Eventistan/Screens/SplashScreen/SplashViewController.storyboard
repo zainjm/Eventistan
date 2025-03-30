@@ -2,9 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,36 +10,39 @@
         <!--Splash View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SplashViewController" id="Y6W-OH-hqX" customClass="SplashViewController" customModule="OLX_Pakistan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="Y6W-OH-hqX" customClass="SplashViewController" customModule="Eventistan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d2L-o2-lb2">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cb6-IR-h6x">
-                                <rect key="frame" x="52.666666666666657" y="282" width="288" height="288"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="288" id="5e2-d2-hib"/>
-                                    <constraint firstAttribute="width" constant="288" id="jP1-gL-jSi"/>
-                                </constraints>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jaP-Rb-9Fc">
+                                <rect key="frame" x="148.66666666666666" y="364.33333333333331" width="96" height="123.33333333333331"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N2r-y6-zGj">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="95"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="OkR-vm-3LZ"/>
+                                            <constraint firstAttribute="width" constant="96" id="pgW-AX-ckl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq4-bJ-DfE">
+                                        <rect key="frame" x="27.333333333333346" y="103" width="41.333333333333343" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="d2L-o2-lb2" secondAttribute="trailing" id="0s2-1h-aQU"/>
-                            <constraint firstItem="Cb6-IR-h6x" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="50b-LF-IzS"/>
-                            <constraint firstAttribute="bottom" secondItem="d2L-o2-lb2" secondAttribute="bottom" id="6gX-n1-aY8"/>
-                            <constraint firstItem="Cb6-IR-h6x" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="aeD-0A-PI2"/>
-                            <constraint firstItem="d2L-o2-lb2" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="kt6-DC-Xks"/>
-                            <constraint firstItem="d2L-o2-lb2" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="xnM-sl-irS"/>
+                            <constraint firstItem="jaP-Rb-9Fc" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="YBM-5O-Mlo"/>
+                            <constraint firstItem="jaP-Rb-9Fc" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="fVt-9d-MTB"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animationContainer" destination="Cb6-IR-h6x" id="ahj-kj-w0E"/>
-                        <outlet property="background" destination="d2L-o2-lb2" id="R8d-NC-3Kd"/>
+                        <outlet property="eventistanTitle" destination="dq4-bJ-DfE" id="YdT-j1-zKh"/>
+                        <outlet property="eventraLogo" destination="N2r-y6-zGj" id="OoO-1O-cyO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
