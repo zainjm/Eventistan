@@ -8,37 +8,59 @@
 import Foundation
 
 public enum TextSize {
+    // Example headings from Figma
     case heading1
     case heading2
     case heading3
     case heading4
     case heading5
     case heading6
-    case heading7
-    case subtitle1
-    case subtitle2
-    case body
-    case base
-    case caption1
-    case caption2
+    
+    // Example body sizes
+    case bodyXLarge
+    case bodyLarge
+    case bodyMedium
+    case bodySmall
+    case bodyXSmall
+    
+    // Example captions/overlines
+    case caption
     case overline
     
+    /// The size in points (pt)
     var size: CGFloat {
         switch self {
-        case .heading1: return 72
-        case .heading2: return 60
-        case .heading3: return 48
-        case .heading4: return 40
-        case .heading5: return 36
-        case .heading6: return 32
-        case .heading7: return 28
-        case .subtitle1: return 24
-        case .subtitle2: return 20
-        case .body: return 18
-        case .base: return 16
-        case .caption1: return 14
-        case .caption2: return 12
-        case .overline: return 10
+        case .heading1:    return 48
+        case .heading2:    return 40
+        case .heading3:    return 32
+        case .heading4:    return 24
+        case .heading5:    return 20
+        case .heading6:    return 18
+            
+        case .bodyXLarge:  return 20
+        case .bodyLarge:   return 18
+        case .bodyMedium:  return 16
+        case .bodySmall:   return 14
+        case .bodyXSmall:  return 12
+            
+        case .caption:     return 12
+        case .overline:    return 10
+        }
+    }
+    
+    /// The weight (e.g. Regular, Bold, etc.)
+    var textWeight: TextWeight {
+        switch self {
+        case .heading1, .heading2, .heading3:
+            return .bold
+        case .heading4, .heading5:
+            return .semibold
+        case .heading6:
+            return .medium
+        case .bodyXLarge, .bodyLarge, .bodyMedium, .bodySmall, .bodyXSmall:
+            return .regular
+        case .caption, .overline:
+            return .regular
         }
     }
 }

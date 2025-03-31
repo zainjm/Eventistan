@@ -7,30 +7,46 @@
 
 import UIKit
 
+//
+//  UIFont+TextStyle.swift
+//
+//
+//  Created by Zain Ul Abe Din on 03/10/2024.
+//
+
+import UIKit
+
 public extension UIFont {
-    // MARK: - Font tokens
-    static let headline1 = font(44, .medium)
-    static let headline2 = font(35, .medium)
-    static let headline3 = font(26, .medium)
-    static let headline4 = font(26, .regular)
-    static let headline5 = font(22, .medium)
-    static let headline6 = font(22, .regular)
+    // MARK: - Heading
+    /// Heading 1: 48pt / Bold
+    static let heading1 = font(48, .bold)
+    /// Heading 2: 40pt / Bold
+    static let heading2 = font(40, .bold)
+    /// Heading 3: 32pt / Bold
+    static let heading3 = font(32, .bold)
+    /// Heading 4: 24pt / Bold
+    static let heading4 = font(24, .bold)
+    /// Heading 5: 20pt / Bold
+    static let heading5 = font(20, .bold)
+    /// Heading 6: 18pt / Bold
+    static let heading6 = font(18, .bold)
     
-    static let paragraph1 = font(20, .medium)
-    static let paragraph2 = font(18, .regular)
-    static let paragraph3 = font(18, .medium)
-    static let paragraph4 = font(15, .regular)
-    static let paragraph5 = font(15, .medium)
-    static let paragraph6 = font(13, .regular)
-    static let paragraph7 = font(13, .medium)
-    static let paragraph8 = font(13, .medium)
-    static let paragraph9 = font(12, .regular)
-    static let paragraph10 = font(12, .medium)
-    static let paragraph11 = font(9, .medium)
-    static let paragraph12 = font(14, .regular)
-    static let paragraph13 = font(14, .medium)
-    static let paragraph14 = font(11, .regular)
-    static let paragraph15 = font(11, .medium)
+    // MARK: - Body
+    /// Body Jumbo: 20pt / Regular
+    static let bodyJumbo  = font(20, .regular)
+    /// Body XLarge: 18pt / Regular
+    static let bodyXLarge = font(18, .regular)
+    /// Body Large: 16pt / Regular
+    static let bodyLarge  = font(16, .regular)
+    /// Body Medium: 14pt / Regular
+    static let bodyMedium = font(14, .regular)
+    /// Body Small: 12pt / Regular
+    static let bodySmall  = font(12, .regular)
+    /// Body XSmall: 10pt / Regular
+    static let bodyXSmall = font(10, .regular)
+    
+    // MARK: - Dynamic text style function
+    /// If you still want a flexible method for custom sizes/weights:
     static func textStyle(
         with _font: AppFont = AppTheme.font,
         _ textSize: TextSize,
@@ -40,8 +56,9 @@ public extension UIFont {
     }
 }
 
-// MARK: - Utils
+// MARK: - Internal Utils
 private extension UIFont {
+    /// Overload taking `TextSize` + `TextWeight`
     static func font(
         with _font: AppFont = AppTheme.font,
         _ textSize: TextSize,
@@ -58,6 +75,7 @@ private extension UIFont {
         }
     }
     
+    /// Overload taking raw CGFloat size + `TextWeight`
     static func font(
         with _font: AppFont = AppTheme.font,
         _ textSize: CGFloat,

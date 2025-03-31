@@ -17,6 +17,7 @@ final class GettingStartedViewController: UIViewController {
     
     // MARK: - IBActions
     
+  
     @IBAction func buttonTapped(_ sender: Any) {
         viewModel.onTap()
     }
@@ -36,8 +37,8 @@ final class GettingStartedViewController: UIViewController {
 extension GettingStartedViewController {
     func setupViews() {
         view.backgroundColor = .blue500
-        firstHeadline.font = .headline4
-        secondHeadline.font = .paragraph3
+        firstHeadline.font = .heading3
+        secondHeadline.font = .bodyXLarge
         secondHeadline.textColor = .primaryWhite
         firstHeadline.textColor = .primaryWhite
         gettingStartedButton.title = "Getting Started"

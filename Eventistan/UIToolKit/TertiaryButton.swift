@@ -1,23 +1,22 @@
 //
-//  PrimaryButton.swift
-//  Eventistan
+//  TertiaryButton.swift
 //
-//  Created by Zain Najam Khan on 31/03/2025.
+//
+//  Created by Zain Ul Abe Din on 01/11/2024.
 //
 
-import Foundation
 import UIKit
 
-public final class PrimaryButton: UIButton {
+public final class TertiaryButton: UIButton {
     // MARK: - Properties
-    public var renderingMode: UIImage.RenderingMode = .alwaysTemplate
     public var icon: UIImage? { didSet { setup() } }
     public var title: String? { didSet { setup() } }
     public var alignment: UIButton.Configuration.TitleAlignment = .center { didSet { setup() } }
+    public var theme: Theme = .primary { didSet { setup() } }
+    public var contentInsets: NSDirectionalEdgeInsets = .zero { didSet { setup() } }
     public override var isEnabled: Bool { didSet { setup() } }
-    public var customForegroundColor: UIColor? { didSet { setup() } }
-    public var customBackgroundColor: UIColor? { didSet { setup() } }
     public var attributes: [NSAttributedString.Key: Any] = Constant.attributes { didSet { setup() } }
+    public var imagePadding: CGFloat = .small { didSet { setup() }}
     public override var isHighlighted: Bool {
         didSet {
             UIView.animate(withDuration: 0.2, animations: { [weak self] in
@@ -25,11 +24,18 @@ public final class PrimaryButton: UIButton {
             })
         }
     }
+
     // MARK: - Constants
     private enum Constant {
         static let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.bodyMedium,
+            .font: UIFont.bodyMedium
         ]
+    }
+    
+    // MARK: Theme
+    public enum Theme {
+        case primary
+        case blue
     }
     
     // MARK: - Initialization
@@ -49,21 +55,25 @@ public final class PrimaryButton: UIButton {
 }
 
 // MARK: - Setup
-private extension PrimaryButton {
-    private func setup() {
-        var config = UIButton.Configuration.filled()
-        config.image = icon?.withRenderingMode(renderingMode)
-        config.imagePadding = .little
-        config.baseBackgroundColor = customBackgroundColor ?? (isEnabled ? .primaryLabel : .secondaryLabel)
+private extension TertiaryButton {
+    func setup() {
+        var config = UIButton.Configuration.borderless()
+        config.title = title
+        config.image = icon?.withRenderingMode(.alwaysTemplate)
+        config.imagePadding = imagePadding
+        config.baseBackgroundColor = .clear
         config.titleAlignment = alignment
+        config.contentInsets = contentInsets
+        switch theme {
+        case .primary: config.baseForegroundColor = isEnabled ? .blue400 : .blue200
+        case .blue: config.baseForegroundColor = .blue400
+        }
         
         if let title = title {
             config.attributedTitle = AttributedString(title, attributes: AttributeContainer(attributes))
         }
-        config.cornerStyle = .large
+        
         configuration = config
         backgroundColor = .clear
-        layer.cornerRadius = 24
-        layer.masksToBounds = true
     }
 }

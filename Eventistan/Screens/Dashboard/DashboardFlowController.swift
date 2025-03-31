@@ -32,11 +32,9 @@ final class DashboardFlowController: FlowController {
 
 extension DashboardFlowController {
     func startOnboarding() {
-        let viewController = OnboardingPageViewBuilder.build(navigateToLogin: {
-            [weak self] in
-            self?.navigateToCitySelection()
-        })
-        rootNavigationController?.pushViewController(viewController, animated: true)
+        
+        let flowController = OnboardingFlowController(rootNavigationController: rootNavigationController)
+        navigate(to: flowController)
     }
     
     func navigateToCitySelection() {

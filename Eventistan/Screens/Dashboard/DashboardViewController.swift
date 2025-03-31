@@ -38,12 +38,12 @@ private extension DashboardViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         let normalTitleAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.paragraph6,
+            .font: UIFont.bodyXLarge,
             .foregroundColor: UIColor.primary
         ]
         
         let selectedTitleAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.paragraph7,
+            .font: UIFont.bodyXLarge,
             .foregroundColor: UIColor.primary
         ]
         

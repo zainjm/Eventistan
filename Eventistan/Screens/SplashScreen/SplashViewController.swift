@@ -29,7 +29,7 @@ private extension SplashViewController {
         eventraLogo.image = UIImage(named: Constants.eventistanBackgroundLogo)
         eventistanTitle.text = Constants.eventistanTitle
         eventistanTitle.textColor = .primaryWhite
-        eventistanTitle.font = .headline1
+        eventistanTitle.font = .heading3
     }
 }
 

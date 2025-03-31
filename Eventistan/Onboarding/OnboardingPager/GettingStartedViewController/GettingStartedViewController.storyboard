@@ -42,17 +42,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="576-rf-nLl">
                                                 <rect key="frame" x="27.666666666666686" y="397" width="240" height="330"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-23-qTa">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-23-qTa">
                                                         <rect key="frame" x="99.333333333333329" y="0.0" width="41.333333333333329" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Hnk-xg-ack">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Hnk-xg-ack">
                                                         <rect key="frame" x="0.0" y="36.333333333333371" width="240" height="293.66666666666669"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGj-7I-x0I">
-                                                                <rect key="frame" x="99.333333333333329" y="0.0" width="41.333333333333329" height="20.333333333333332"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGj-7I-x0I">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -61,10 +61,13 @@
                                                                 <rect key="frame" x="0.0" y="52.333333333333272" width="240" height="241.33333333333337"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uZ-bt-C2b" customClass="PrimaryButton" customModule="Eventistan" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="241.33333333333334"/>
+                                                                        <rect key="frame" x="0.0" y="189.33333333333337" width="240" height="52"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="52" id="LPZ-2l-gBu"/>
+                                                                        </constraints>
                                                                         <connections>
-                                                                            <action selector="buttonTapped:" destination="Y6W-OH-hqX" eventType="valueChanged" id="e5X-Fk-9wD"/>
+                                                                            <action selector="buttonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EM6-EP-Yoz"/>
                                                                         </connections>
                                                                     </view>
                                                                 </subviews>
