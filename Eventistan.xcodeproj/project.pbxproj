@@ -6,11 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		ACAEF1A22D9B3A400047492C /* UIToolKit in Frameworks */ = {isa = PBXBuildFile; productRef = ACAEF1A12D9B3A400047492C /* UIToolKit */; };
-		ACAEF1A52D9B3A4F0047492C /* UIToolKit in Frameworks */ = {isa = PBXBuildFile; productRef = ACAEF1A42D9B3A4F0047492C /* UIToolKit */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		ACE770BC2D919641001510D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,7 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ACAEF19F2D9B3A160047492C /* UIToolKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIToolKit; sourceTree = "<group>"; };
 		ACE770A52D91963F001510D1 /* Eventistan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventistan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE770BB2D919641001510D1 /* EventistanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventistanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE770C52D919641001510D1 /* EventistanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventistanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,8 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACAEF1A22D9B3A400047492C /* UIToolKit in Frameworks */,
-				ACAEF1A52D9B3A4F0047492C /* UIToolKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +81,6 @@
 		ACE7709C2D91963F001510D1 = {
 			isa = PBXGroup;
 			children = (
-				ACAEF19F2D9B3A160047492C /* UIToolKit */,
 				ACE770A72D91963F001510D1 /* Eventistan */,
 				ACE770A62D91963F001510D1 /* Products */,
 			);
@@ -125,8 +116,6 @@
 			);
 			name = Eventistan;
 			packageProductDependencies = (
-				ACAEF1A12D9B3A400047492C /* UIToolKit */,
-				ACAEF1A42D9B3A4F0047492C /* UIToolKit */,
 			);
 			productName = Eventistan;
 			productReference = ACE770A52D91963F001510D1 /* Eventistan.app */;
@@ -205,7 +194,6 @@
 			mainGroup = ACE7709C2D91963F001510D1;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				ACAEF1A32D9B3A4F0047492C /* XCLocalSwiftPackageReference "UIToolKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ACE770A62D91963F001510D1 /* Products */;
@@ -562,24 +550,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		ACAEF1A32D9B3A4F0047492C /* XCLocalSwiftPackageReference "UIToolKit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = UIToolKit;
-		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ACAEF1A12D9B3A400047492C /* UIToolKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UIToolKit;
-		};
-		ACAEF1A42D9B3A4F0047492C /* UIToolKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UIToolKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACE7709D2D91963F001510D1 /* Project object */;
 }
