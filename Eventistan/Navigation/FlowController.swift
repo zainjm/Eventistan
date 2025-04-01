@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Types
 
 protocol FlowControllerDelegate: AnyObject {
     func flowControllerDidFinish(_ flowController: FlowControllerType)
@@ -17,9 +18,11 @@ open class FlowController: NSObject, FlowControllerType {
     private(set) public var flowControllers = [FlowController]()
     private weak var flowControllerDelegate: (any FlowControllerDelegate)?
     public var flowControllerId: UUID = UUID()
-    
+    public let dependency: any DependencyType
+
     // MARK: - Initialization
-    public required init(rootNavigationController: UINavigationController?) {
+    public required init(rootNavigationController: UINavigationController?, dependency: any DependencyType) {
+        self.dependency = dependency
         self.rootNavigationController = rootNavigationController
     }
     

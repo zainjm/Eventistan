@@ -28,7 +28,7 @@ private extension AppFlowController {
     }
     
     func startDashboard() {
-        let flowController = DashboardFlowController(rootNavigationController: rootNavigationController)
+        let flowController = DashboardFlowController(rootNavigationController: rootNavigationController, dependency: dependency)
         navigate(to: flowController)
     }
 }

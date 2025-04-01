@@ -11,8 +11,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var window: UIWindow? = UIWindow()
     lazy var navigationController = UINavigationController()
+    lazy var dependency = Dependency()
     lazy var appFlowController = AppFlowController(
-        rootNavigationController: navigationController)
+        rootNavigationController: navigationController, dependency: dependency)
 
     func application(
         _ application: UIApplication,

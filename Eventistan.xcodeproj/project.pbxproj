@@ -10,6 +10,7 @@
 		AC1CDD4A2D9C184C00DA5997 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = AC1CDD492D9C184C00DA5997 /* Theme */; };
 		AC1CDD4D2D9C189F00DA5997 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = AC1CDD4C2D9C189F00DA5997 /* Theme */; };
 		AC7235062D9C1D79008D7C97 /* Types in Frameworks */ = {isa = PBXBuildFile; productRef = AC7235052D9C1D79008D7C97 /* Types */; };
+		AC72AA1B2D9C74A100CF9FA1 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = AC72AA1A2D9C74A100CF9FA1 /* Networking */; };
 		AC99EC042D9C1457008BD0B2 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = AC99EC032D9C1457008BD0B2 /* Extensions */; };
 		AC99EC072D9C1500008BD0B2 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = AC99EC062D9C1500008BD0B2 /* Theme */; };
 		AC99EC0A2D9C1698008BD0B2 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = AC99EC092D9C1698008BD0B2 /* Extensions */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		AC7235032D9C1CA4008D7C97 /* Types */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Types; sourceTree = "<group>"; };
+		AC72AA192D9C741400CF9FA1 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		AC99EC012D9C143B008BD0B2 /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Extensions; sourceTree = "<group>"; };
 		AC99EC052D9C14F5008BD0B2 /* Theme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Theme; sourceTree = "<group>"; };
 		ACE770A52D91963F001510D1 /* Eventistan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventistan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 			files = (
 				AC1CDD4D2D9C189F00DA5997 /* Theme in Frameworks */,
 				AC99EC0D2D9C16A2008BD0B2 /* Theme in Frameworks */,
+				AC72AA1B2D9C74A100CF9FA1 /* Networking in Frameworks */,
 				AC99EC0A2D9C1698008BD0B2 /* Extensions in Frameworks */,
 				AC1CDD4A2D9C184C00DA5997 /* Theme in Frameworks */,
 				AC99EC072D9C1500008BD0B2 /* Theme in Frameworks */,
@@ -101,10 +104,11 @@
 		ACE7709C2D91963F001510D1 = {
 			isa = PBXGroup;
 			children = (
+				ACE770A72D91963F001510D1 /* Eventistan */,
+				AC72AA192D9C741400CF9FA1 /* Networking */,
 				AC7235032D9C1CA4008D7C97 /* Types */,
 				AC99EC052D9C14F5008BD0B2 /* Theme */,
 				AC99EC012D9C143B008BD0B2 /* Extensions */,
-				ACE770A72D91963F001510D1 /* Eventistan */,
 				ACE770A62D91963F001510D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,6 +150,7 @@
 				AC1CDD492D9C184C00DA5997 /* Theme */,
 				AC1CDD4C2D9C189F00DA5997 /* Theme */,
 				AC7235052D9C1D79008D7C97 /* Types */,
+				AC72AA1A2D9C74A100CF9FA1 /* Networking */,
 			);
 			productName = Eventistan;
 			productReference = ACE770A52D91963F001510D1 /* Eventistan.app */;
@@ -611,6 +616,10 @@
 		AC7235052D9C1D79008D7C97 /* Types */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Types;
+		};
+		AC72AA1A2D9C74A100CF9FA1 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
 		};
 		AC99EC032D9C1457008BD0B2 /* Extensions */ = {
 			isa = XCSwiftPackageProductDependency;

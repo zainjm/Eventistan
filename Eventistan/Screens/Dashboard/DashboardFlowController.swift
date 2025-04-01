@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Types
 
 final class DashboardFlowController: FlowController {
     // MARK: - Properties
@@ -14,8 +15,10 @@ final class DashboardFlowController: FlowController {
     
     // MARK: - Initialization
     required init(
-        rootNavigationController: UINavigationController?) {
-        super.init(rootNavigationController: rootNavigationController)
+        rootNavigationController: UINavigationController?,
+        dependency: DependencyType
+    ) {
+        super.init(rootNavigationController: rootNavigationController, dependency: dependency)
     }
     
     // MARK: - Flow
@@ -33,7 +36,7 @@ final class DashboardFlowController: FlowController {
 extension DashboardFlowController {
     func startOnboarding() {
         
-        let flowController = OnboardingFlowController(rootNavigationController: rootNavigationController)
+        let flowController = OnboardingFlowController(rootNavigationController: rootNavigationController, dependency: dependency)
         navigate(to: flowController)
     }
     
