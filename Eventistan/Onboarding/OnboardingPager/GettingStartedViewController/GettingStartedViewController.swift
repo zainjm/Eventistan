@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Theme
 
 final class GettingStartedViewController: UIViewController {
     

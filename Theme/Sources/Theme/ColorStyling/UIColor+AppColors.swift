@@ -1,6 +1,6 @@
 //
 //  UIColor+AppColors.swift
-//
+//  
 //
 //  Created by Zain Ul Abe Din on 04/10/2024.
 //
@@ -82,7 +82,7 @@ fileprivate extension String {
     var color: UIColor {
         UIColor(
             named: AppTheme.colorTheme.rawValue + "-" + self,
-            in: .main,
+            in: .module,
             compatibleWith: nil
         ) ?? .clear
     }

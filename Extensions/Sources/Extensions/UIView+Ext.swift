@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Theme
 
 public extension UIView {
     var frameInWindow: CGRect {

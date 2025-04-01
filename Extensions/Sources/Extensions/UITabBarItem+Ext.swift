@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Theme
 
 public extension UITabBarItem {
     // MARK: - Constants

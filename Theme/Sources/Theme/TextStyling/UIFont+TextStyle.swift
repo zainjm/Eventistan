@@ -7,15 +7,6 @@
 
 import UIKit
 
-//
-//  UIFont+TextStyle.swift
-//
-//
-//  Created by Zain Ul Abe Din on 03/10/2024.
-//
-
-import UIKit
-
 public extension UIFont {
     // MARK: - Heading
     /// Heading 1: 48pt / Bold

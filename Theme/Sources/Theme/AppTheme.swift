@@ -8,6 +8,6 @@
 import Foundation
 
 public final class AppTheme {
-    public static var font: AppFont = .custom(.DMSans)
+    public static let font: AppFont = .custom(.DMSans)
     public static var colorTheme: ColorTheme = .main
 }

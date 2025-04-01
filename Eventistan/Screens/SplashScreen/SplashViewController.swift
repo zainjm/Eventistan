@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Extensions
 
 final class SplashViewController: UIViewController {
     // MARK: - Outlets
